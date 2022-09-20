@@ -1,5 +1,6 @@
 import React from "react";
 import cars from "./practice";
+import animals, {useAnimals} from "./data.js"
 
 function App() {
   const [tesla, honda] = cars;
@@ -15,9 +16,14 @@ function App() {
   const {
     coloursByPopularity: [hondaTopColour]
   } = honda;
+  const [cat, dog]=animals;
+  const meme = useAnimals;
+  const [name, dosomthing]=meme(cat);
+  console.log(dosomthing())
 
   return (
-    <table>
+    <section>
+        <table>
       <tr>
         <th>Brand</th>
         <th>Top Speed</th>
@@ -34,6 +40,10 @@ function App() {
         <td>{hondaTopColour}</td>
       </tr>
     </table>
+    {/* <div>
+        
+    </div> */}
+    </section>
   );
 }
 export default App;
